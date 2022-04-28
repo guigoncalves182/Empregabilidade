@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styles.css" />
     <title>Example</title>
   </head>
@@ -27,12 +28,36 @@
       type="text"
     /><br />
     <hr />
+
+    Select
+    <span class="select">
     <select class="inputPrimary">
       <option disabled hidden>Alguma coisa</option>
       <option>Alguma coisa</option>
       <option>Alguma coisa</option>
       <option>Alguma coisa</option>
     </select>
+    </span>
+    <hr />
+
+    checkbox
+    <label class="checkBoxGroup">
+      <span class="textAlternative">checkBox 1</span>
+      <input class="checkBox" type="checkbox" name="termo1" value="1" />
+      <span class="checkMark"></span>
+    </label>
+
+    <label class="checkBoxGroup">
+      <span class="textAlternative">checkBox 2</span>
+      <input class="checkBox" type="checkbox" name="termo2" value="2" />
+      <span class="checkMark"></span>
+    </label>
+
+    <label class="checkBoxGroup">
+      <span class="textAlternative">checkBox 3</span>
+      <input class="checkBox" type="checkbox" name="termo3" value="3" />
+      <span class="checkMark"></span>
+    </label>
     <hr />
 
     Links<br />
@@ -42,10 +67,14 @@
     <hr />
 
     buttons<br />
-    <button class="buttonPrimary" type="submit">buttonPrimary</button><br />
-    <button class="buttonSecondary" type="submit">buttonSecondary</button><br />
-    <button class="buttonAlternative" type="submit">buttonSecondary</button
+    <button class="buttonPrimary">buttonPrimary</button><br />
+    <button class="buttonSecondary">buttonSecondary</button><br />
+    <button class="buttonAlternative">buttonSecondary</button
     ><br />
+
+    <button class="buttonPositive">buttonPositive</button><br />
+    <button class="buttonNegative">buttonNegative</button><br />
+    <button class="buttonDanger">buttonDanger</button><br />
     <hr />
 
     Textos<br />
@@ -73,5 +102,12 @@
       minima magnam facere aliquam laboriosam optio quasi! Corporis asperiores
       commodi ab!</span
     ><br /><br />
+    <hr />
+
+    Modal
+    <button class="buttonPositive" onclick="openModal()">Precisa de parametros</button>
+    <button class="buttonPositive" onclick="openModal('Título','Conteudo em texto')">Paramentros normais</button>
+    <button class="buttonPositive" onclick="openModal('Título','Conteudo em texto','Saquei')">Botão opcional</button>
   </body>
+  <script src="/js/index.js"></script>
 </html>

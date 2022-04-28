@@ -1,4 +1,5 @@
 @import "variables";
+@import "modal";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
@@ -22,6 +23,25 @@ select:focus {
 select {
   appearance: none;
   color: $dark;
+  // background-image: url('/assets/favicon-16x16.png');
+}
+
+.select {
+  position: relative;
+  display: block;
+  &::before {
+    content: "V";
+    font-weight: 900;
+    position: absolute;
+    width: 1.1em;
+    height: 1.1em;
+    text-align: center;
+    border: $thickness solid $black;
+    bottom: calc(0.65em + $thickness);
+    right: calc(0.65em + $thickness);
+    box-shadow: $thickness $thickness 0px $highlight;
+    background: $white;
+  }
 }
 
 a {
@@ -179,7 +199,7 @@ a {
     transition: box-shadow $slow ease-in-out;
 
     &:hover,
-    &:focus{
+    &:focus {
       box-shadow: calc($thickness * -1) calc($thickness * -1) 0px $highlight;
     }
 
@@ -249,6 +269,45 @@ a {
   &:hover {
     transition: box-shadow $slow ease-in-out;
     box-shadow: calc($thickness * -1) calc($thickness * -1) 0px $highlight;
+  }
+}
+
+%feedbackButtons {
+  @extend %button;
+  @extend %buttonDecoration;
+  background: $white;
+  min-width: 15em;
+  font-weight: 500;
+  border: $thickness solid $black;
+  margin-inline: $thickness;
+  &:focus,
+  &:hover {
+    transition: box-shadow $slow ease-in-out;
+    box-shadow: calc($thickness * -1) calc($thickness * -1) 0px;
+  }
+}
+
+.buttonPositive {
+  @extend %feedbackButtons;
+  color: $positive;
+  box-shadow: $thickness $thickness 0px $positive;
+}
+
+.buttonNegative {
+  @extend %feedbackButtons;
+  color: $negative;
+  box-shadow: $thickness $thickness 0px $negative;
+}
+
+.buttonDanger {
+  @extend %feedbackButtons;
+  color: $white;
+  background: $negative;
+  box-shadow: $thickness $thickness 0px $black;
+  &:focus,
+  &:hover {
+    transition: box-shadow $slow ease-in-out;
+    box-shadow: calc($thickness * -1) calc($thickness * -1) 0px $black;
   }
 }
 
@@ -342,11 +401,11 @@ hr {
 }
 
 @media screen and (max-width: 150px) {
-  body > * {
+  html > * {
     display: none;
   }
 
-  body::after {
+  html::after {
     content: "Really?! Less than 150 pixels!";
   }
 }

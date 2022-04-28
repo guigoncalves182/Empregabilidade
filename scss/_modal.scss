@@ -1,0 +1,79 @@
+
+/* Modal section */
+.modal{
+    display: none;
+    top: 2em;
+    left: calc(50% - calc($sm / 2));
+    position: fixed;
+    width: $sm;
+    margin: 0 auto;
+    background: $white;
+    border: calc($thickness * 1) solid $black;
+    box-shadow: calc($thickness * 2) calc($thickness * 2) 0px $black;
+    z-index: 10;
+    padding: 1em;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 90%;
+
+    .closeModal{
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        width: 1.5em;
+        height: 1.5em;
+        border: $thickness solid $black;
+        box-shadow: $thickness $thickness 0px $highlight;
+        text-align: center;
+        margin: auto;
+        cursor: pointer;
+        z-index: 10;
+        transition: box-shadow $fast ease-in-out;
+        &:hover,
+        &:focus{
+            box-shadow: calc($thickness * -1) calc($thickness * -1) 0px $negative;
+        }
+    }
+  }
+  
+  .modal.positive{
+    box-shadow: calc($thickness * 2) calc($thickness * 2) 0px $positive;
+  }
+  
+  .modal.negative{
+    box-shadow: calc($thickness * 2) calc($thickness * 2) 0px $negative;
+  }
+  
+  //if used togheter
+  .backDrop.true{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $black;
+    z-index: 5;
+    border-right: $thickness solid $black;
+    opacity: .9;
+  }
+  
+  .backDrop.true ~ .modal{
+    display: block;
+    position: fixed;
+  }
+  
+  
+  @media screen and (max-width: $sm) {
+    .modal {
+      width: 90%;
+      height: 90%;
+      left: calc(50% - calc(90% / 2));
+    }
+  }
+  
+  .modalBody{
+      text-align: justify;
+  }
+
+  .modalFooter{
+      text-align: center;
+      display: none;
+  }
