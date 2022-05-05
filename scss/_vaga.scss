@@ -1,0 +1,84 @@
+.vagaTitle {
+  display: grid;
+  gap: 0.25em 0.5em;
+  grid-template-areas:
+    "thumb title title"
+    "thumb main main"
+    "thumb local  publicacao";
+  grid-template-columns: 10em 1fr auto;
+  grid-template-rows: auto 1fr auto;
+
+  .vagaThumbEmpresa {
+    grid-area: thumb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      min-width: min(10em, 90%);
+      width: 10em;
+      object-fit: cover;
+      aspect-ratio: 1;
+      box-shadow: $thickness $thickness 0px $highlight;
+    }
+  }
+
+  .vagaEmpresa {
+    grid-area: title;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .vagaMain {
+    grid-area: main;
+    display: flex;
+    align-items: center;
+  }
+
+  .vagaLocal {
+    grid-area: local;
+    display: flex;
+    align-items: end;
+  }
+
+  .vagaPublicacao {
+    grid-area: publicacao;
+    text-align: end;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .vagaTitle {
+    grid-template-areas:
+      "thumb"
+      "title"
+      "main"
+      "local"
+      "publicacao";
+    grid-template-columns: 1fr;
+
+    .vagaThumbEmpresa {
+      aspect-ratio: auto;
+      text-align: center;
+      img {
+        width: 50%;
+        object-fit: scale-down;
+        margin-bottom: 0.5em;
+      }
+    }
+
+    .vagaPublicacao {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.vagaFooter {
+  display: flex;
+  align-items: center;
+  .inscreverSe {
+    text-align: center;
+  }
+}

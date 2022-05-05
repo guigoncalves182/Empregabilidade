@@ -1,0 +1,48 @@
+.navbar {
+    width: 100%;
+    top: 0;
+    background-color: $primary;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7em;
+    flex-wrap: wrap;
+    border-bottom: $thickness solid $highlight;
+    flex-grow: 1;
+    z-index: 2;
+
+    .logo{
+      height: 2.5em;  
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: $sm) {
+        height: 2em;
+        padding: 0.25em;
+      }
+    }
+  
+    .userNav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1em;
+      flex-wrap: wrap;
+      cursor: pointer;
+  
+      .userName {
+        color: $white;
+        font-size: x-large;
+        &::after {
+          content: " _";
+        }
+      }
+  
+      .userAvatar {
+        background-color: $highlight;
+        aspect-ratio: 1;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        border: $thickness solid $black;
+      }
+    }
+  }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empregabilidade</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/png" href="/assets/favicon-16x16.png" />
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <div id="backdrop" onclick="closeNav()"></div>
+
+    <div id="sidenav" class="sidenav">
+      <div class="closeButton" onclick="closeNav()">X</div>
+
+      <section class="sidenavHeader">
+        <div class="sidenavUserAvatar"></div>
+        <div class="sidenavUserNome">Fulano de tal</div>
+      </section>
+
+      <hr />
+
+      <section class="sidenavBody">
+        <a class="buttonNavMain" href="#">Meu curriculo</a>
+        <a class="buttonNavRegular" href="#">Minhas vagas</a>
+      </section>
+
+      <div class="logoutButton buttonAlternative">Sair</div>
+    </div>
+
+    <div class="container">
+      <nav class="navbar">
+        <a href="/html/home.html">
+          <img class="logo" src="../assets/logo.svg" />
+        </a>
+
+        <section class="userNav" onclick="openNav()">
+          <div class="userName">Fulano de Tal</div>
+          <div class="userAvatar"></div>
+        </section>
+      </nav>
+
+      <div id="contentSmall" class="contentSmall">
+        <span class="titlePrimary">Buscar vagas</span>
+
+        <div class="imputSearch">
+          <input
+            id="inputVagas"
+            class="inputPrimary"
+            placeholder="Carregando vagas"
+            type="text"
+            onkeyup="s2filter()"
+            disabled
+          />
+
+          <div id="listVagas">
+            <a href="listaVagas.html" class="listItem">Programador</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script defer src="../js/script.js"></script>
+  <script defer src="../js/sidenav.js"></script>
+  <script async src="../js/busca.js"></script>
+</html>

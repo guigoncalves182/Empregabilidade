@@ -1,0 +1,97 @@
+.cards {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+  display: grid;
+
+  @media screen and (max-width: $xxl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: $xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: $lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: $md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media screen and (max-width: $sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  & * {
+    // border: 1px solid red;
+  }
+
+  .cardVaga {
+    border: $thickness solid $black;
+    box-shadow: $thickness $thickness 0px $gray;
+
+    & > *:not(hr, .tagsVaga) {
+      padding: 1em 0.5em;
+    }
+
+    hr {
+      width: calc(100% - $thickness * 10);
+      margin: 0 auto;
+    }
+
+    .cardTitle {
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      border-bottom: $thickness solid $black;
+
+      img {
+        width: 5em;
+        box-shadow: $thickness $thickness 0px $black;
+      }
+
+      .cardNomeEmpresa {
+        margin-left: 0.5em;
+      }
+    }
+
+    .cardSub {
+      & > * {
+        display: block;
+      }
+
+      .cardCargo {
+        font-size: x-large;
+      }
+
+      .cardLocal {
+        font-size: large;
+      }
+    }
+
+    .tagsVaga {
+      padding-inline: 0.5em;
+    }
+
+    .cardBody {
+      text-align: justify;
+      .cardText {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+
+    .cardButton {
+      text-align: center;
+      margin: 0.5em auto;
+    }
+
+    .cardFooter {
+      padding: 0.25em 0.75em;
+      text-align: end;
+    }
+  }
+}

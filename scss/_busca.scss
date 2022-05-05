@@ -1,0 +1,66 @@
+.contentSmall {
+  background-color: $white;
+  margin: 15em auto 2em;
+  width: $xl;
+  box-sizing: border-box;
+  padding: 1em;
+  border: $thickness solid $black;
+  box-shadow: $thickness $thickness 0px $black;
+  transition: margin 0.5s ease-in-out;
+}
+
+.imputSearch {
+  position: relative;
+
+  #listVagas {
+    display: none;
+    $listItens: 15;
+    $listHeight: 1.3em;
+    position: absolute;
+    background-color: $white;
+    border: $thickness solid $black;
+    box-sizing: border-box;
+    margin-inline: 0.1em;
+    width: calc(100% - $thickness);
+    align-items: center;
+    overflow-y: scroll;
+    max-height: calc($listHeight * $listItens + $thickness * 2);
+
+    .listItem {
+      &:first-child {
+        font-weight: 900;
+      }
+      display: block;
+      word-break: break-all;
+      overflow-y: hidden;
+      box-sizing: border-box;
+      padding-inline: 0.5em;
+      height: $listHeight;
+      transition: $fast ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $gray;
+
+        @media screen and (max-width: $md) {
+          animation: marquee 5s linear infinite alternate;
+          background-color: $white;
+
+          @keyframes marquee {
+            0% {
+              margin-left: 0;
+            }
+            100% {
+              margin-left: -50%;
+            }
+          }
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $black;
+    }
+  }
+}

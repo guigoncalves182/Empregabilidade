@@ -1,0 +1,117 @@
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  //left: 0;
+  right: calc($thickness * -1);
+  background-color: $white;
+  border-left: $thickness solid $highlight;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  /* Place content 60px from the top */
+  transition: $slow; /* 0.5 second transition effect to slide in the sidenav */
+  padding-top: 1.5em;
+
+  * {
+    word-break: normal;
+  }
+
+  hr {
+    width: calc(100% - $thickness * 6);
+    margin: 0;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .sidenavHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sidenavUserAvatar {
+      background-color: $highlight;
+      aspect-ratio: 1;
+      width: 10em;
+      border-radius: 50%;
+      border: $thickness solid $black;
+    }
+
+    .sidenavUserNome {
+      font-size: xx-large;
+    }
+  }
+
+  .sidenavBody {
+    width: calc(100% - $thickness * 6);
+    %buttonNav {
+      padding: 0.2em;
+      border: $thickness solid $black;
+      box-shadow: $thickness $thickness 0px $black;
+      font-size: x-large;
+      text-align: center;
+      text-decoration: none;
+      margin: 0.5em auto;
+      color: $black;
+      display: block;
+      width: 100%;
+      transition: box-shadow $slow ease-in-out;
+      &:focus,
+      &:hover {
+        transition: box-shadow $slow ease-in-out;
+        box-shadow: calc($thickness * -1) calc($thickness * -1) 0px $black;
+      }
+    }
+    .buttonNavMain {
+      @extend %buttonNav;
+      background-color: $primary;
+      color: $white;    
+      padding: 00.5em
+    }
+
+    .buttonNavRegular {
+      @extend %buttonNav;
+      box-shadow: $thickness $thickness 0px $black;
+      &:hover {
+        box-shadow: calc($thickness * -1) calc($thickness * -1) 0px $black;
+      }
+    }
+  }
+
+  .closeButton {
+    background-color: $white;
+    position: absolute;
+    cursor: pointer;
+    right: 1em;
+    top: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    border: $thickness solid $black;
+    box-shadow: $thickness $thickness 0px $highlight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow $slow ease-in-out;
+    &:focus,
+    &:hover {
+      transition: box-shadow $slow ease-in-out;
+      box-shadow: calc($thickness * -1) calc($thickness * -1) 0px $highlight;
+    }
+  }
+
+  .logoutButton {
+    padding: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    height: 2.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

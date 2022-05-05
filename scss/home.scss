@@ -1,0 +1,119 @@
+@import "styles";
+@import "navbar";
+@import "sidenav";
+@import "busca";
+@import "vaga";
+@import "listaVagas";
+
+body {
+  background-color: $white;
+}
+
+#backdrop {
+  display: none;
+  position: absolute;
+  background-color: $black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.content {
+  background-color: $white;
+  margin: 2em auto;
+  width: $xxl;
+  box-sizing: border-box;
+  padding: 1em;
+  border: $thickness solid $black;
+  box-shadow: $thickness $thickness 0px $black;
+}
+
+@media screen and (max-width: $xxl) {
+  .content {
+    width: $xl;
+  }
+  .contentSmall {
+    width: $lg;
+  }
+}
+
+@media screen and (max-width: $xl) {
+  .content {
+    width: $lg;
+  }
+  .contentSmall {
+    width: $md;
+  }
+}
+
+@media screen and (max-width: $lg) {
+  .content {
+    width: $md;
+  }
+  .contentSmall {
+    width: $sm;
+  }
+}
+
+@media screen and (max-width: $md) {
+  .content {
+    width: $sm;
+  }
+  .contentSmall {
+    width: $sm;
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .content,
+  .contentSmall {
+    width: calc(100vw - 1em);
+  }
+
+  .contentSmall {
+    margin-top: 2em;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .userNav {
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.tagsVaga {
+  text-align: end;
+  margin: 0.25em;
+}
+
+.descricaoVaga {
+  text-align: justify;
+  margin: 1em auto;
+}
+
+.tag {
+  font-size: small;
+  background-color: $highlight;
+  display: inline-block;
+  margin: 0.25em;
+  padding: 0.5em;
+  color: $black;
+  font-weight: 500;
+  box-shadow: $thickness $thickness 0px $primary;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow $fast ease-in-out;
+  &:hover,
+  &:focus {
+    box-shadow: calc($thickness * -1) calc($thickness * -1) 0px $primary;
+  }
+}

@@ -431,61 +431,482 @@ hr {
   }
 }
 /*# sourceMappingURL=index.css.map */
-body {
-  background: #620097;
-  display: flex;
-  justify-content: flex-start;
-  background-image: url("../assets/meninos4_.jpg");
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: right top;
-  background-attachment: fixed;
-}
-
-.filter {
-  position: absolute;
-  background-color: #620097;
+.navbar {
   width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 0;
-  opacity: 0.5;
-}
-
-.container {
-  padding: 1em;
-  width: 370px;
-  background: #fcfcfc;
-  height: 100vh;
-  z-index: 1;
-  border-right: 3px solid #1a1a1a;
-}
-
-.headerLogin {
+  top: 0;
+  background-color: #620097;
   display: flex;
-  flex-flow: column;
+  justify-content: space-between;
+  padding: 0.7em;
+  flex-wrap: wrap;
+  border-bottom: 3px solid #fdba31;
+  flex-grow: 1;
+  z-index: 2;
+}
+.navbar .logo {
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 576px) {
+  .navbar .logo {
+    height: 2em;
+    padding: 0.25em;
+  }
+}
+.navbar .userNav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.navbar .userNav .userName {
+  color: #fcfcfc;
+  font-size: x-large;
+}
+.navbar .userNav .userName::after {
+  content: " _";
+}
+.navbar .userNav .userAvatar {
+  background-color: #fdba31;
+  aspect-ratio: 1;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 3px solid #1a1a1a;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  right: -3px;
+  background-color: #fcfcfc;
+  border-left: 3px solid #fdba31;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+  padding-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidenav * {
+  word-break: normal;
+}
+.sidenav hr {
+  width: calc(100% - 18px);
+  margin: 0;
+}
+.sidenav .sidenavHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidenav .sidenavHeader .sidenavUserAvatar {
+  background-color: #fdba31;
+  aspect-ratio: 1;
+  width: 10em;
+  border-radius: 50%;
+  border: 3px solid #1a1a1a;
+}
+.sidenav .sidenavHeader .sidenavUserNome {
+  font-size: xx-large;
+}
+.sidenav .sidenavBody {
+  width: calc(100% - 18px);
+}
+.sidenav .sidenavBody .buttonNavRegular, .sidenav .sidenavBody .buttonNavMain {
+  padding: 0.2em;
+  border: 3px solid #1a1a1a;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  font-size: x-large;
+  text-align: center;
+  text-decoration: none;
+  margin: 0.5em auto;
+  color: #1a1a1a;
+  display: block;
+  width: 100%;
+  transition: box-shadow 0.5s ease-in-out;
+}
+.sidenav .sidenavBody .buttonNavRegular:focus, .sidenav .sidenavBody .buttonNavMain:focus, .sidenav .sidenavBody .buttonNavRegular:hover, .sidenav .sidenavBody .buttonNavMain:hover {
+  transition: box-shadow 0.5s ease-in-out;
+  box-shadow: -3px -3px 0px #1a1a1a;
+}
+.sidenav .sidenavBody .buttonNavMain {
+  background-color: #620097;
+  color: #fcfcfc;
+  padding: 0.5em;
+}
+.sidenav .sidenavBody .buttonNavRegular {
+  box-shadow: 3px 3px 0px #1a1a1a;
+}
+.sidenav .sidenavBody .buttonNavRegular:hover {
+  box-shadow: -3px -3px 0px #1a1a1a;
+}
+.sidenav .closeButton {
+  background-color: #fcfcfc;
+  position: absolute;
+  cursor: pointer;
+  right: 1em;
+  top: 1em;
+  width: 2.5em;
+  height: 2.5em;
+  border: 3px solid #1a1a1a;
+  box-shadow: 3px 3px 0px #fdba31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.5s ease-in-out;
+}
+.sidenav .closeButton:focus, .sidenav .closeButton:hover {
+  transition: box-shadow 0.5s ease-in-out;
+  box-shadow: -3px -3px 0px #fdba31;
+}
+.sidenav .logoutButton {
+  padding: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.logo {
-  margin: 0.5em auto;
+.contentSmall {
+  background-color: #fcfcfc;
+  margin: 15em auto 2em;
+  width: 1200px;
+  box-sizing: border-box;
+  padding: 1em;
+  border: 3px solid #1a1a1a;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  transition: margin 0.5s ease-in-out;
+}
+
+.imputSearch {
+  position: relative;
+}
+.imputSearch #listVagas {
+  display: none;
+  position: absolute;
+  background-color: #fcfcfc;
+  border: 3px solid #1a1a1a;
+  box-sizing: border-box;
+  margin-inline: 0.1em;
+  width: calc(100% - 3px);
+  align-items: center;
+  overflow-y: scroll;
+  max-height: calc(19.5em + 6px);
+}
+.imputSearch #listVagas .listItem {
+  display: block;
+  word-break: break-all;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  height: 1.3em;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.imputSearch #listVagas .listItem:first-child {
+  font-weight: 900;
+}
+.imputSearch #listVagas .listItem:hover {
+  background-color: #c4c4c4;
+}
+@media screen and (max-width: 768px) {
+  .imputSearch #listVagas .listItem:hover {
+    animation: marquee 5s linear infinite alternate;
+    background-color: #fcfcfc;
+  }
+  @keyframes marquee {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -50%;
+    }
+  }
+}
+.imputSearch #listVagas a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.vagaTitle {
+  display: grid;
+  gap: 0.25em 0.5em;
+  grid-template-areas: "thumb title title" "thumb main main" "thumb local  publicacao";
+  grid-template-columns: 10em 1fr auto;
+  grid-template-rows: auto 1fr auto;
+}
+.vagaTitle .vagaThumbEmpresa {
+  grid-area: thumb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vagaTitle .vagaThumbEmpresa img {
+  min-width: min(10em, 90%);
+  width: 10em;
+  object-fit: cover;
+  aspect-ratio: 1;
+  box-shadow: 3px 3px 0px #fdba31;
+}
+.vagaTitle .vagaEmpresa {
+  grid-area: title;
+  display: flex;
+  align-items: flex-start;
+}
+.vagaTitle .vagaMain {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+}
+.vagaTitle .vagaLocal {
+  grid-area: local;
+  display: flex;
+  align-items: end;
+}
+.vagaTitle .vagaPublicacao {
+  grid-area: publicacao;
+  text-align: end;
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 576px) {
-  body {
-    justify-content: center;
-    background: #fcfcfc;
+  .vagaTitle {
+    grid-template-areas: "thumb" "title" "main" "local" "publicacao";
+    grid-template-columns: 1fr;
   }
-
-  .filter {
-    display: none;
+  .vagaTitle .vagaThumbEmpresa {
+    aspect-ratio: auto;
+    text-align: center;
   }
-
-  .container {
-    width: 100%;
-    border: none;
-    height: auto;
+  .vagaTitle .vagaThumbEmpresa img {
+    width: 50%;
+    object-fit: scale-down;
+    margin-bottom: 0.5em;
+  }
+  .vagaTitle .vagaPublicacao {
+    justify-content: flex-start;
   }
 }
+.vagaFooter {
+  display: flex;
+  align-items: center;
+}
+.vagaFooter .inscreverSe {
+  text-align: center;
+}
 
-/*# sourceMappingURL=login.css.map */
+.cards {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+  display: grid;
+}
+@media screen and (max-width: 1400px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 576px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.cards .cardVaga {
+  border: 3px solid #1a1a1a;
+  box-shadow: 3px 3px 0px #c4c4c4;
+}
+.cards .cardVaga > *:not(hr, .tagsVaga) {
+  padding: 1em 0.5em;
+}
+.cards .cardVaga hr {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+.cards .cardVaga .cardTitle {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid #1a1a1a;
+}
+.cards .cardVaga .cardTitle img {
+  width: 5em;
+  box-shadow: 3px 3px 0px #1a1a1a;
+}
+.cards .cardVaga .cardTitle .cardNomeEmpresa {
+  margin-left: 0.5em;
+}
+.cards .cardVaga .cardSub > * {
+  display: block;
+}
+.cards .cardVaga .cardSub .cardCargo {
+  font-size: x-large;
+}
+.cards .cardVaga .cardSub .cardLocal {
+  font-size: large;
+}
+.cards .cardVaga .tagsVaga {
+  padding-inline: 0.5em;
+}
+.cards .cardVaga .cardBody {
+  text-align: justify;
+}
+.cards .cardVaga .cardBody .cardText {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cards .cardVaga .cardButton {
+  text-align: center;
+  margin: 0.5em auto;
+}
+.cards .cardVaga .cardFooter {
+  padding: 0.25em 0.75em;
+  text-align: end;
+}
+
+body {
+  background-color: #fcfcfc;
+}
+
+#backdrop {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.content {
+  background-color: #fcfcfc;
+  margin: 2em auto;
+  width: 1400px;
+  box-sizing: border-box;
+  padding: 1em;
+  border: 3px solid #1a1a1a;
+  box-shadow: 3px 3px 0px #1a1a1a;
+}
+
+@media screen and (max-width: 1400px) {
+  .content {
+    width: 1200px;
+  }
+
+  .contentSmall {
+    width: 992px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .content {
+    width: 992px;
+  }
+
+  .contentSmall {
+    width: 768px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .content {
+    width: 768px;
+  }
+
+  .contentSmall {
+    width: 576px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content {
+    width: 576px;
+  }
+
+  .contentSmall {
+    width: 576px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .content,
+.contentSmall {
+    width: calc(100vw - 1em);
+  }
+
+  .contentSmall {
+    margin-top: 2em;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar .userNav {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+.tagsVaga {
+  text-align: end;
+  margin: 0.25em;
+}
+
+.descricaoVaga {
+  text-align: justify;
+  margin: 1em auto;
+}
+
+.tag {
+  font-size: small;
+  background-color: #fdba31;
+  display: inline-block;
+  margin: 0.25em;
+  padding: 0.5em;
+  color: #1a1a1a;
+  font-weight: 500;
+  box-shadow: 3px 3px 0px #620097;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.tag:hover, .tag:focus {
+  box-shadow: -3px -3px 0px #620097;
+}
+
+/*# sourceMappingURL=home.css.map */

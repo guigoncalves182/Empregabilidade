@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empregabilidade</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/png" href="/assets/favicon-16x16.png" />
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <div id="backdrop" onclick="closeNav()"></div>
+
+    <div id="sidenav" class="sidenav">
+      <div class="closeButton" onclick="closeNav()">X</div>
+
+      <section class="sidenavHeader">
+        <div class="sidenavUserAvatar"></div>
+        <div class="sidenavUserNome">Fulano de tal</div>
+      </section>
+
+      <hr />
+
+      <section class="sidenavBody">
+        <a class="buttonNavMain" href="#">Meu curriculo</a>
+        <a class="buttonNavRegular" href="#">Minhas vagas</a>
+      </section>
+
+      <div class="logoutButton buttonAlternative">Sair</div>
+    </div>
+
+    <div class="container">
+      <nav class="navbar">
+        <a href="/html/home.html">
+          <img class="logo" src="../assets/logo.svg" />
+        </a>
+
+        <section class="userNav" onclick="openNav()">
+          <div class="userName">Fulano de Tal</div>
+          <div class="userAvatar"></div>
+        </section>
+      </nav>
+
+      <div class="content">
+        <!-- <span class="titlePrimary">Sistema de Empregabilidade</span> -->
+
+        <section class="vagaTitle">
+          <div class="vagaThumbEmpresa">
+            <img src="../assets/thumb/vale.png" />
+          </div>
+          <div class="vagaEmpresa">
+            <span class="titlePrimary">Programador</span>
+          </div>
+          <div class="vagaMain">
+            <span class="titleSecondary">Vale</span>
+          </div>
+          <div class="vagaLocal">RJ - Rio de Janeiro</div>
+          <div class="vagaPublicacao">Publicação em: 01/01/2021</div>
+        </section>
+
+        <hr />
+
+        <section class="vagaBody">
+          <div class="tagsVaga">
+            <a class="tag">Remoto</a>
+            <a class="tag">Efetivo</a>
+          </div>
+          <div class="descricaoVaga">
+            <span class="textPreserve">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus?</span>
+            <span class="textPreserve">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus?</span>
+            <span class="textPreserve">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore impedit sed, aperiam minima, a at ex rerum aut reprehenderit iste nobis nam sequi expedita odio perspiciatis perferendis optio temporibus?</span>
+          </div>
+        </section>
+
+        <section class="vagaFooter">
+          <button class="inscreverSe buttonSecondary">Inscrever-se</button>
+        </section>
+      </div>
+    </div>
+  </body>
+  <script src="../js/script.js"></script>
+  <script src="../js/sidenav.js"></script>
+</html>
