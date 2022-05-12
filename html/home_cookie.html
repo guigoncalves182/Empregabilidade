@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empregabilidade</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/png" href="/assets/favicon-16x16.png" />
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <div id="backdrop" onclick="closeNav()"></div>
+
+    <div id="sidenav" class="sidenav">
+      <div class="closeButton" onclick="closeNav()">X</div>
+
+      <section class="sidenavHeader">
+        <div class="sidenavUserAvatar"></div>
+        <div class="sidenavUserNome">Fulano de tal</div>
+      </section>
+
+      <hr />
+
+      <section class="sidenavBody"></section>
+
+      <div class="logoutButton buttonAlternative">Sair</div>
+    </div>
+
+    <div class="container">
+      <nav class="navbar">
+        <a href="/html/home.html">
+          <img class="logo" src="../assets/logo.svg" />
+        </a>
+
+        <section class="userNav" onclick="openNav()">
+          <div class="userName">Fulano de Tal</div>
+          <div class="userAvatar"></div>
+        </section>
+      </nav>
+
+      <div class="content">
+        <span class="titlePrimary">Home</span>
+
+        <h3>Páginas criadas</h3>
+        <ul>
+          <li><a class="linkPrimary" href="index.html">Login</a></li>
+          <li><a class="linkPrimary" href="cadastro_1.html">Cadastro 1</a></li>
+          <li><a class="linkPrimary" href="cadastro_2.html">Cadastro 2</a></li>
+          <li><a class="linkPrimary" href="busca.html">Busca</a></li>
+          <li>
+            <a class="linkPrimary" href="listaVagas.html">Lista de Vagas</a>
+          </li>
+          <li><a class="linkPrimary" href="vaga.html">Vaga</a></li>
+          <li><a class="linkPrimary" href="curriculo.html">Curriculo</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script src="../js/perfil.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/sidenav.js"></script>
+</html>

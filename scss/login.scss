@@ -40,6 +40,37 @@ body {
   margin: 0.5em auto;
 }
 
+.gridSelecao {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1em;
+  margin: 0.5em auto;
+  text-align: center;
+  a {
+    color: $black;
+  }
+
+  .selecaoOpcao {
+    border: $thickness solid $black;
+    padding: 0.4em;
+    box-shadow: $thickness $thickness $highlight;
+
+    cursor: pointer;
+    transition: box-shadow $slow ease-in-out, transform $fast ease-in-out;
+
+    &:hover {
+      box-shadow: calc($thickness * -1) calc($thickness * -1) $highlight;
+      transform: scale(1.1, 1.1);
+    }
+
+    .icon {
+      color: $primary;
+      font-size: 3em;
+      margin: 0.2em;
+    }
+  }
+}
+
 @media screen and (max-width: $sm) {
   body {
     justify-content: center;

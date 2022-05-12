@@ -46,9 +46,9 @@
     .then((response) => response.json())
     .then((ceds) => {
       ceds.map((val) => {
-        select.innerHTML =
-          select.innerHTML +
-          `<a class='listItem' href='#${val.id}'>${val.nome}</a>`;
+        //select.innerHTML = select.innerHTML + `<a class='listItem' href='#${val.id}'>${val.nome}</a>`;
+        select.insertAdjacentHTML("beforeend", `<a class='listItem' href='#${val.id}'>${val.nome}</a>`);
+         
         select.disabled = false;
         //customClose.disabled = false;
         customInput.disabled = false;

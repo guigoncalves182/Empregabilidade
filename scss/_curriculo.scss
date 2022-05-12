@@ -1,0 +1,50 @@
+.curriculoDadosPessoais {
+  gap: 0.5em;
+  display: grid;
+  grid-template-areas:
+    "nome nome"
+    "dataNascimento genero"
+    "deficiencia pais"
+    "linkedin linkedin";
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: $sm) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nome"
+      "dataNascimento"
+      "genero"
+      "deficiencia"
+      "pais"
+      "linkedin";
+  }
+
+  .curriculoFinalNome {
+    grid-area: nome;
+  }
+
+  .curriculoFinalDataNascimento {
+    grid-area: dataNascimento;
+  }
+
+  .curriculoFinalGenero {
+    grid-area: genero;
+  }
+
+  .curriculoFinalDeficiencia {
+    grid-area: deficiencia;
+  }
+
+  .curriculoFinalPais {
+    grid-area: pais;
+  }
+
+  .curriculoFinalLinkedin {
+    grid-area: linkedin;
+  }
+
+}
+
+.curriculoFooter{
+  text-align: end;
+}

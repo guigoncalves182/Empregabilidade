@@ -23,10 +23,6 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  & * {
-    // border: 1px solid red;
-  }
-
   .cardVaga {
     border: $thickness solid $black;
     box-shadow: $thickness $thickness 0px $gray;
